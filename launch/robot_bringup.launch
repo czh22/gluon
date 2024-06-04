@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+    <node pkg="gluon" type="can_bringup" name="can_bringup" />
+
+    <node pkg="gluon" type="dual_bringup" name="dual_bringup" />
+
+    <node pkg="gluon" type="left_moveit_server" name="left_moveit_server" />
+
+    <node pkg="gluon" type="right_moveit_server" name="right_moveit_server" />
+
+    
+
+</launch>

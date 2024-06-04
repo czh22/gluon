@@ -1,0 +1,44 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/s/Desktop/catkin_workspace/devel/include/**",
+        "/home/s/ws_moveit/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/s/ws_moveit/src/moveit/moveit_planners/chomp/chomp_motion_planner/include/**",
+        "/home/s/Desktop/catkin_workspace/src/gazebo_plugins/include/**",
+        "/home/s/ws_moveit/src/geometric_shapes/include/**",
+        "/home/s/Desktop/catkin_workspace/src/gluon_control/include/**",
+        "/home/s/ws_moveit/src/moveit/moveit_planners/chomp/chomp_interface/include/**",
+        "/home/s/ws_moveit/src/moveit_resources/prbt_ikfast_manipulator_plugin/include/**",
+        "/home/s/ws_moveit/src/moveit/moveit_ros/benchmarks/include/**",
+        "/home/s/ws_moveit/src/moveit/moveit_plugins/moveit_ros_control_interface/include/**",
+        "/home/s/ws_moveit/src/moveit/moveit_ros/move_group/include/**",
+        "/home/s/ws_moveit/src/moveit/moveit_ros/occupancy_map_monitor/include/**",
+        "/home/s/ws_moveit/src/moveit/moveit_ros/robot_interaction/include/**",
+        "/home/s/ws_moveit/src/moveit/moveit_ros/moveit_servo/include/**",
+        "/home/s/ws_moveit/src/moveit/moveit_setup_assistant/include/**",
+        "/home/s/ws_moveit/src/moveit/moveit_plugins/moveit_simple_controller_manager/include/**",
+        "/home/s/ws_moveit/src/moveit_task_constructor/core/include/**",
+        "/home/s/ws_moveit/src/moveit_task_constructor/demo/include/**",
+        "/home/s/ws_moveit/src/moveit_visual_tools/include/**",
+        "/home/s/ws_moveit/src/moveit/moveit_planners/pilz_industrial_motion_planner/include/**",
+        "/home/s/ws_moveit/src/moveit/moveit_planners/pilz_industrial_motion_planner_testutils/include/**",
+        "/home/s/ws_moveit/src/moveit_task_constructor/rviz_marker_tools/include/**",
+        "/home/s/ws_moveit/src/rviz_visual_tools/include/**",
+        "/home/s/ws_moveit/src/srdfdom/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

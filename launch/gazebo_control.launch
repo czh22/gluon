@@ -1,0 +1,28 @@
+<launch>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find gluon)/config/dual_gazebo_control.yaml" command="load"/>
+
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/gluon" args="joint_state_controller left_joint1_position_controller left_joint2_position_controller left_joint3_position_controller 
+    left_joint4_position_controller left_joint5_position_controller left_joint6_position_controller right_joint1_position_controller 
+    right_joint2_position_controller right_joint3_position_controller 
+    right_joint4_position_controller right_joint5_position_controller right_joint6_position_controller cloud_platform_joint_position_controller"/>
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  
+
+  <node name="controller_spawner2" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/gluon2" args="joint_state_controller left_joint1_position_controller left_joint2_position_controller left_joint3_position_controller 
+    left_joint4_position_controller left_joint5_position_controller left_joint6_position_controller right_joint1_position_controller 
+    right_joint2_position_controller right_joint3_position_controller 
+    right_joint4_position_controller right_joint5_position_controller right_joint6_position_controller cloud_platform_joint_position_controller"/>
+<!--node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen">
+    <remap from="/joint_states" to="/gluon/joint_states" />
+  </node-->
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  
+
+</launch>

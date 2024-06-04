@@ -1,0 +1,41 @@
+<launch>
+  <!-- these are the arguments you can pass this launch file, for example paused:=true -->
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+ 
+  <!-- We resume the logic in empty_world.launch -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="headless" value="$(arg headless)"/>
+  </include>
+
+<param name="/robot_description" textfile = "$(find gluon)/urdf/dual_arm_gazebo.urdf" /> 
+  <group ns="gluon1">
+      
+      <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+	args="-urdf -model gluon1 -param /robot_description -x 1 -y 0"/> 
+    </group>
+<param name="/robot_description2" textfile = "$(find gluon)/urdf/dual_arm_gazebo2.urdf" /> 
+  <group ns="gluon2">
+      
+      <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+	args="-urdf -model gluon2 -param /robot_description2 -x -1 -y 0"/> 
+    </group>
+
+  <!-- Load the URDF into the ROS Parameter Server -->
+  <!--param name="robot_description1" textfile = "$(find gluon)/urdf/dual_arm_gazebo.urdf" /> 
+  <param name="robot_description2" textfile = "$(find gluon)/urdf/dual_arm_gazebo2.urdf" /--> 
+ 
+ 
+  <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+  <!--node name="urdf_spawner1" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+	args="-urdf -model gluon1 -param robot_description1 -x 1 -y 0"/> 
+  <node name="urdf_spawner2" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+	args="-urdf -model gluon2 -param $(find gluon)/urdf/dual_arm_gazebo2.urdf -x -1 -y 0"/--> 
+</launch>
