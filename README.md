@@ -1,0 +1,6 @@
+一、代码作用
+src：
+  gluon_interface: 调用gluon机械臂api进行初始化，初始化机械臂有关ros话题，并创建线程进行定频率更新机械臂关节角度状态
+  dual_bringup: 调用gluon_interface初始化机械臂，订阅控制量话题并调用api执行，创建线程定频率发布joint_state话题以便rviz等可视化工具调用
+  can_interface: 接受usbtocan的消息帧，定义pid等控制算法，并创建线程进行定频率更新机械臂关节角度状态
+  can_bringup: 调用can_interface初始化6020，订阅控制量话题并调用api执行，定频率发布joint_state话题以便rviz等可视化工具调用
