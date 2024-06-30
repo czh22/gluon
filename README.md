@@ -15,6 +15,8 @@
 
   ## scripts: <br>
 
+  ___catch_demo___: yolov8检测定位快递盒并通过moveit控制机械臂抓取的演示demo代码<br>
+
   ### moveit: <br>
   
   ___dual_moveitCommander___: 用来测试moveitcommander功能的脚本<br>
@@ -22,5 +24,32 @@
 
   ### serial: <br>
 
-  ___receive_serial___: 通过串口通信接收arduino发来的末端应变片数据，并发布相关ros话题
+  ___receive_serial___: 通过串口通信接收arduino发来的末端应变片数据，并发布相关ros话题<br>
+
+  ### camera: <br>
+  ___Camera_Calibratet_Distort___: 用来标定相机内参<br>
+  ___take_photo___: 使用键盘当快门进行拍照（用来进行手眼标定）<br>
+  ___calibrate___: 用来标定相机外参（手眼标定）<br>
+  ___image_process_py___: 接收相机话题并使用yolov8进行快递盒检测<br>
+  ___edge___: 一些测试代码，为了使得yolov8检测效果更好<br>
+
+  ### gazebo: <br>
+  ___gazebo_commander___: 键盘控制gazebo中的仿真机械臂<br>
+  ___random_gazebo___: 使仿真机械臂进行随机移动，之前用来获取训练数据，但这项工作已经被弃用<br>
+  ___realtime_joint___: 将joint消息中的时间戳从仿真时间改为ros时间，同上也已经弃用<br>
+  ___record_gazebo_data___: 记录仿真中机械臂的各种数据用来训练模型，同上也已经弃用<br>
+  ___gazebo_test___ 和 ___model_operation___: 同上已经弃用<br>
+
+  ___gazebo_test2___: 使用imu对仿真机械臂进行遥操作<br>
+
+  ### imu: <br>
+  ___imu_calibrate___: 之前用来测试将imu当前位置标定为0初始位置的代码，成功后已经整合进其他代码中<br>
+  ___imu_transform___: 用来补偿掉imu加速度数据中的重力成分，这项工作已经弃用<br>
+  ___speed_integration___: 用来将imu中的加速度积分为速度，同上已经弃用<br>
+  ___position_integration___: 用来将速度积分为位置，同上已经弃用<br>
+  ___imu_control_real___: 用来使用imu控制真实机械臂进行遥操作，与gazebo中的gazebo_test2对应，是其通过测试后应用到真实机械臂的版本<br>
+  ___test4___: 一些测试代码<br>
+
+  
+  
   
